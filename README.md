@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 AI Slide Builder
 
-## Getting Started
+An AI-assisted, editable, slide-by-slide presentation generator built using Gemini 2.0 Flash and rendered with MARP (Markdown Presentation Ecosystem). Design beautiful, dynamic presentations powered by natural language prompts — edit, regenerate, and style every element with ease.
 
-First, run the development server:
+—
 
-```bash
+🚀 Features
+
+- 🧠 Generate full presentations from a single prompt
+- 🔁 Slide-by-slide generation with context-aware summaries
+- ✍️ Per-slide editing and regeneration using prompts
+- ✂️ Select text and rewrite with AI via prompt
+- ➕ Insert basic elements: image, table, video, code, text
+- 🎨 Custom styling: border, padding, alignment, font
+- 🖼 Live MARP preview and markdown editing
+- 📤 Export to PDF or PPTX using marp-cli
+
+—
+
+🧱 Tech Stack
+
+| Layer           | Technology                  |
+|----------------|-----------------------------|
+| Frontend        | Next.js 14 (App Router)     |
+| LLM Integration | Gemini 2.0 Flash API        |
+| Markdown Engine | @marp-team/marp-core        |
+| State Mgmt      | Zustand / React Context     |
+| Styling         | Tailwind CSS                |
+| Editor          | React Markdown / MDE Editor |
+| Backend (opt)   | Firebase / Supabase / API Routes |
+| Export Engine   | marp-cli                    |
+
+—
+
+✨ Getting Started
+
+1. Clone the repo
+
+git clone https://github.com/yourusername/ai-slide-builder.git
+cd ai-slide-builder
+
+2. Install dependencies
+
+npm install
+
+3. Setup environment variables
+
+.env.local:
+
+GEMINI_API_KEY=your_gemini_api_key_here
+MONGODB_URI=your_mongo_uri
+
+4. Run locally
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. (Optional) Setup marp-cli for export:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm install -g @marp-team/marp-cli
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+—
 
-## Learn More
+🧠 Prompt Context Flow
 
-To learn more about Next.js, take a look at the following resources:
+Every slide generation request includes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Original user prompt
+- Summaries of previous slides
+- Current slide’s content (if editing)
+- Optional: User’s per-slide edit prompt
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This enables Gemini to generate or revise content contextually and intelligently.
 
-## Deploy on Vercel
+—
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📤 Exporting Slides
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Slides are rendered in MARP markdown and can be exported using marp-cli:
+
+npx marp slides.md --pdf  
+npx marp slides.md --pptx
+
+—
+
+📌 Future Improvements
+
+- Slide reordering and drag-and-drop UI
+- AI-assisted outline generation and batch slide creation
+- Templates and themes for visual polish
+- Real-time collaboration (Liveblocks / Firebase)
+
+—
+
+📄 License
+
+MIT License. Feel free to fork, contribute, and innovate.
