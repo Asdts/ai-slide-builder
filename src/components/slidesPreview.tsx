@@ -24,6 +24,17 @@ export default function SlidePreview({ markdown, selectedTheme }: {
   return (
     <div className="flex flex-col gap-4">
       <div className="w-full h-96 overflow-y-auto border border-gray-300 rounded-lg shadow-md">
+      <input type="file" accept=".css" onChange={(e) => {
+                    if (!e?.target.files?.length) return
+                    const reader = new FileReader()
+                    reader.onload = () => {
+                        const css = reader.result as string
+                        const { html, css: renderedCSS } = renderMarpMarkdown(markdown, css)
+                        setHtml(html)
+                        setCss(renderedCSS)
+                    }
+                    reader.readAsText(e.target.files[0])
+        }} />
         <div
           className="preview"
           dangerouslySetInnerHTML={{ __html: html }}
