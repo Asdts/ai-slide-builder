@@ -1,4 +1,4 @@
-/**
+/*
  * Extracts the markdown content wrapped inside triple backticks from agent response.
  * Supports optional language specifier like ```md.
  *

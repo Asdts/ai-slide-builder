@@ -12,7 +12,7 @@ export default function SlidePreview({ markdown, selectedTheme }: {
 
   useEffect(() => {
     async function fetchThemeAndRender() {
-      const res = await fetch(`/themes/${selectedTheme}.css`)
+      const res = await fetch(`/slides/theme/${selectedTheme}.css`)
       const themeCSS = await res.text()
       const { html, css } = renderMarpMarkdown(markdown, themeCSS)
       setHtml(html)
