@@ -6,7 +6,7 @@ import User from "@/model/user.model";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { sendVerMail } from "@/utils/mailer";
-
+import {  apillm } from "@/connection/genAi";
 export async function POST(req: NextRequest) {
   try {
     // Connect to the database
@@ -19,7 +19,10 @@ export async function POST(req: NextRequest) {
     if (!username || !email || !password || !phoneNumber || !geminiApiKey || !geminiApiSecret) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
-
+    const testApiKey = await apillm("test", geminiApiKey);
+    if (!testApiKey) {
+      return NextResponse.json({ error: "Invalid Gemini API Key" }, { status: 400 });
+    }
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
