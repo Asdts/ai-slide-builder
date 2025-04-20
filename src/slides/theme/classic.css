@@ -1,0 +1,90 @@
+/* @theme classic */
+/* A timeless MARP theme for universal use */
+/* created by asd */
+/* License: MIT */
+
+@import "default";
+
+:root {
+  --background: #ffffff;
+  --text-color: #000000;
+  --heading-color: #003366;
+  --subheading-color: #0055aa;
+  --accent-color: #0088cc;
+  --border-color: #dddddd;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+section {
+  background-color: var(--background);
+  color: var(--text-color);
+  padding: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  margin-bottom: 0.6em;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--subheading-color);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+
+ul, ol {
+  margin-left: 1.5em;
+  color: var(--text-color);
+}
+
+code {
+  background: #f0f0f0;
+  color: #000;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+pre {
+  background-color: #f9f9f9;
+  border-left: 4px solid var(--accent-color);
+  padding: 1em;
+  font-size: 0.95em;
+  overflow-x: auto;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+blockquote {
+  border-left: 5px solid var(--accent-color);
+  padding-left: 1em;
+  font-style: italic;
+  color: #333;
+}
+
+footer {
+  margin-top: 2em;
+  font-size: 0.8em;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.5em;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  font-size: 0.75em;
+  color: #aaa;
+  position: absolute;
+  bottom: 1em;
+  right: 1.5em;
+}
+

@@ -10,16 +10,25 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
+    "@marp-team/marp-core": "^4.0.1",
     "@marp-team/marpit": "^3.1.2",
+    "@radix-ui/react-select": "^2.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.501.0",
+    "markdown-it": "^14.1.0",
     "mongoose": "^8.13.2",
     "next": "15.3.1",
+    "pdf-lib": "^1.17.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.17.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

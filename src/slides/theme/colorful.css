@@ -1,0 +1,106 @@
+/* @theme colorful */
+/* A vibrant MARP theme for creative and engaging presentations */
+/* created by asd */
+/* License: MIT */
+
+@import "default";
+
+:root {
+  --bg-color: #fff8f0;
+  --text-color: #333333;
+  --primary: #ff6f61;
+  --secondary: #6b5b95;
+  --accent: #88b04b;
+  --highlight: #f7cac9;
+  --code-bg: #f0f0f0;
+  font-family: "Comic Sans MS", "Poppins", "Segoe UI", sans-serif;
+}
+
+section {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2.5em;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  border-bottom: 4px solid var(--primary);
+  padding-bottom: 0.2em;
+}
+
+h2 {
+  color: var(--secondary);
+  font-size: 1.8em;
+}
+
+h3, h4, h5, h6 {
+  color: var(--accent);
+}
+
+p, li {
+  font-size: 1.15em;
+  line-height: 1.6em;
+}
+
+strong {
+  color: var(--primary);
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 1.5em;
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+code {
+  background-color: var(--code-bg);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  color: #000;
+  font-size: 0.95em;
+}
+
+pre {
+  background-color: var(--code-bg);
+  border-left: 4px solid var(--secondary);
+  padding: 1em;
+  font-size: 0.9em;
+}
+
+blockquote {
+  background-color: var(--highlight);
+  padding: 0.75em 1em;
+  border-left: 5px solid var(--primary);
+  font-style: italic;
+  color: #000;
+  margin: 1em 0;
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  font-size: 0.8em;
+  color: var(--secondary);
+  text-align: center;
+  margin-top: 2em;
+  border-top: 1px solid var(--accent);
+  padding-top: 0.5em;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  font-size: 0.75em;
+  color: var(--accent);
+  position: absolute;
+  bottom: 1em;
+  right: 1.5em;
+}
