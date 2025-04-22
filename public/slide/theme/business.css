@@ -1,0 +1,84 @@
+/* @theme business */
+/* A clean, professional theme for business presentations */
+/* creadted by asd https://github.com/asdts */
+/* License: MIT */
+
+@import "default";
+
+:root {
+  --bg-color: #ffffff;
+  --header-bg: #003366;
+  --header-text: #ffffff;
+  --primary-text: #222222;
+  --secondary-text: #555555;
+  --accent-color: #0070c0;
+  --footer-color: #888888;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+section {
+  background-color: var(--bg-color);
+  padding: 2em;
+}
+
+h1 {
+  color: var(--header-text);
+  background-color: var(--header-bg);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--accent-color);
+  margin-top: 1.5em;
+}
+
+p, li {
+  color: var(--primary-text);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+code {
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  font-size: 0.95em;
+  color: #000;
+}
+
+pre {
+  background-color: #f4f4f4;
+  border-left: 4px solid var(--accent-color);
+  padding: 1em;
+  font-size: 0.95em;
+}
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  color: var(--footer-color);
+  margin-top: 2em;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5em;
+}
+
+/* Slide pagination */
+section::after {
+  font-size: 0.75em;
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  color: var(--footer-color);
+  position: absolute;
+  bottom: 1em;
+  right: 1.5em;
+}

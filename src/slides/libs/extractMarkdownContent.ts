@@ -8,7 +8,7 @@
  */
 export function extractMarkdown(rawResponse: string): string | null {
     const match = rawResponse.match(/```(?:md)?\\n?([\s\S]*?)```/);
-  
+    // console.log(match)
     return match ? match[1].trim() : null;
   }
   

@@ -1,12 +1,18 @@
-import { NewSlideAgent } from "./export";
-import { FirstSlideAgent } from "./export";
-import { ExportAgent } from "./export";
-import { SelectedAgent } from "./export";
-import { RegenerateAgent } from "./export";
-import { SummaryAgent } from "./export";
-import { InsertSlideAgent } from "./export";
-import { StylingAgent } from "./export";
-import { OutlineAgent } from "./export";
+// /src/slides/agents/registry.ts
+// created by ASDTS
+import { 
+    DocumentToSlidesAgent, 
+    NewSlideAgent , 
+    FirstSlideAgent , 
+    ExportAgent , 
+    SelectedAgent , 
+    RegenerateAgent , 
+    SummaryAgent , 
+    InsertSlideAgent , 
+    StylingAgent , 
+    OutlineAgent
+} from "./export";
+
 
 export const AgentRegistry = {
     [FirstSlideAgent.name]: FirstSlideAgent,
@@ -18,5 +24,6 @@ export const AgentRegistry = {
     [InsertSlideAgent.name]: InsertSlideAgent,
     [StylingAgent.name]: StylingAgent,
     [OutlineAgent.name]: OutlineAgent,
+    [DocumentToSlidesAgent.name]: DocumentToSlidesAgent,
 
 };

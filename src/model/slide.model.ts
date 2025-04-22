@@ -4,7 +4,7 @@ const slideSchema = new mongoose.Schema(
   {
     slideIndex: { type: Number, required: true },
     contentMarkdown: { type: String, required: true },
-    previousContent: { type: String, required: true },
+    previousContent: { type: String },
     plainTextSummary: { type: String },
     type: {
       type: String,

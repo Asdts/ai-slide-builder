@@ -3,7 +3,7 @@
 // created by ASDTS
 // This file is part of the Gemini Agent project.
 
-
+import { llm } from "@/connection/genAi"
 export abstract class BaseAgent {
   abstract NAME: string
 
@@ -13,9 +13,9 @@ export abstract class BaseAgent {
     return this.authPrompt(...args)
   }
 
-  getAction(generatedText: string): any {
+  async getAction(generatedText: string): Promise<any> {
     try {
-      return generatedText
+      return await llm(generatedText);
     } catch (err) {
        console.error("Error parsing action:",this.NAME, err)
     }

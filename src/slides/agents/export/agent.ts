@@ -1,3 +1,5 @@
+// /src/slides/agents/export/agent.ts
+// created by ASDTS
 import { BaseAgent } from "@/slides/agents/baseAgent";
 
 export class ExportAgent extends BaseAgent {
