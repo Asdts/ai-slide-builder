@@ -24,12 +24,11 @@ export async function POST(req: NextRequest) {
       console.log(slides)
   
       const createdSlides = await Promise.all(
-        slides.map(async (slideMarkdown: string, index: number) => {
+        slides.map(async (slides: string, index: number) => {
           return await Slide.create({
             slideIndex: index,
-            contentMarkdown: slideMarkdown.trim(),
+            contentMarkdown: slides.trim(),
             settings: body.settings,
-            // previousContent: "",
             previousContent: body.topic || "Initial Slide",
             type: "first"
           });

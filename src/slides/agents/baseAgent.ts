@@ -15,7 +15,7 @@ export abstract class BaseAgent {
 
   async getAction(generatedText: string): Promise<any> {
     try {
-      return await llm(generatedText);
+      return await llm({prompt:generatedText});
     } catch (err) {
        console.error("Error parsing action:",this.NAME, err)
     }
